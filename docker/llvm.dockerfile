@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM ubuntu:20.04
 
 SHELL ["/bin/bash", "-c"]
 ENV CPP_DOCKER="on"
@@ -35,7 +35,7 @@ RUN apt remove --purge --auto-remove cmake \
 ARG SYSROOT_VERSION
 RUN mkdir -p /code \
     && git clone -b v${SYSROOT_VERSION} \
-        https://github.com/faasm/cpp \
+        https://github.com/joshuafried/fasm-cpp \
         /code/cpp \
     && cd /code/cpp \
     && git submodule update --init -f third-party/wasi-libc \

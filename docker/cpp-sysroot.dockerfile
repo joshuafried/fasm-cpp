@@ -2,7 +2,7 @@
 FROM faasm.azurecr.io/llvm:0.2.4 as llvm
 
 # faabric-base image is not re-built often, so tag may be behind
-FROM faasm.azurecr.io/faabric-base:0.4.2
+FROM faasm.azurecr.io/faabric-base:0.4.0
 SHELL ["/bin/bash", "-c"]
 ENV CPP_DOCKER="on"
 
@@ -16,7 +16,7 @@ RUN apt update && apt install -y autotools-dev
 ARG SYSROOT_VERSION
 RUN mkdir -p /code \
     && git clone -b v${SYSROOT_VERSION} \
-        https://github.com/faasm/cpp \
+        https://github.com/joshuafried/fasm-cpp \
         /code/cpp \
     && cd /code/cpp \
     && git submodule update --init -f third-party/faabric \
