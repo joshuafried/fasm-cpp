@@ -31,6 +31,8 @@ RUN apt remove --purge --auto-remove cmake \
     && apt clean autoclean -y \
     && apt autoremove -y
 
+RUN wget https://apt.llvm.org/llvm.sh && chmod +x llvm.sh && ./llvm.sh 13
+
 # Get the code, build the main targets, and remove the code
 ARG SYSROOT_VERSION
 RUN mkdir -p /code \

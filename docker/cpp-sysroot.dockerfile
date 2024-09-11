@@ -1,5 +1,5 @@
 # llvm image is not re-built often, so the tag may be behind
-FROM faasm.azurecr.io/llvm:0.2.4 as llvm
+FROM faasm.azurecr.io/llvm:0.2.6 as llvm
 
 # faabric-base image is not re-built often, so tag may be behind
 FROM faasm.azurecr.io/faabric-base:0.4.4
