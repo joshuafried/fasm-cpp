@@ -9,7 +9,7 @@ RUN apt update \
     && apt install -y \
         autoconf \
         build-essential \
-        clang-13 \
+        #clang-13 \
         curl \
         git \
         gpg \
